@@ -69,6 +69,7 @@ const Dashboard = () => {
         </Typography>
         <Typography variant="body2" component="p">
           Welcome to your dashboard!
+          abcd
         </Typography>
       </CardContent>
     </Card>
