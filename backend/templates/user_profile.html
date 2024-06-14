@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <form method="POST" action="/user_profile" enctype="multipart/form-data">
+        <label for="country">Select Country:</label>
+        <select name="country" id="country">
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="UK">UK</option>
+            <!-- Add more countries as needed -->
+        </select>
+
+        <label for="marketplace">Select Marketplace:</label>
+        <select name="marketplace" id="marketplace">
+            <option value="Amazon">Amazon</option>
+            <option value="eBay">eBay</option>
+            <option value="Walmart">Walmart</option>
+            <!-- Add more marketplaces as needed -->
+        </select>
+
+        <label for="file">Upload File:</label>
+        <input type="file" name="file" id="file" required>
+
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

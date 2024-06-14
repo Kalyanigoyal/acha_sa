@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_file') }}">
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file" required><br><br>
+
+        <label for="country">Select country:</label>
+        <select name="country" id="country" onchange="updateCategories()" required>
+            <option value="">Select Country</option>
+            <option value="INDIA" {{ 'selected' if user.country == 'INDIA' else '' }}>INDIA</option>
+            <option value="Canada" {{ 'selected' if user.country == 'Canada' else '' }}>Canada</option>
+        </select><br><br>
+
+        <label for="category">Select category:</label>
+        <select name="category" id="category" onchange="updateSubcategories()" required>
+            <option value="">Select Category</option>
+            <option value="Health" {{ 'selected' if user.category == 'Health' else '' }}>Health</option>
+            <option value="Beauty" {{ 'selected' if user.category == 'Beauty' else '' }}>Beauty</option>
+        </select><br><br>
+
+        <label for="subcategory">Select subcategory:</label>
+        <select name="subcategory" id="subcategory" required>
+            <option value="">Select Subcategory</option>
+            <option value="Lubricants" {{ 'selected' if user.subcategory == 'Lubricants' else '' }}>Lubricants</option>
+            <option value="Intimate Hygiene" {{ 'selected' if user.subcategory == 'Intimate Hygiene' else '' }}>Intimate Hygiene</option>
+            <option value="Shampoo" {{ 'selected' if user.subcategory == 'Shampoo' else '' }}>Shampoo</option>
+        </select><br><br>
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <script>
+        function updateCategories() {
+            var countrySelect = document.getElementById("country");
+            var categorySelect = document.getElementById("category");
+
+            categorySelect.innerHTML = "";
+
+            if (countrySelect.value === "INDIA" || countrySelect.value === "Canada") {
+                var options = ["Health", "Beauty"];
+            } else {
+                var options = ["Select Category"];
+            }
+
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement("option");
+                option.text = options[i];
+                option.value = options[i];
+                if (option.value === "{{ user.category }}") {
+                    option.selected = true;
+                }
+                categorySelect.add(option);
+            }
+
+            updateSubcategories();
+        }
+
+        function updateSubcategories() {
+            var categorySelect = document.getElementById("category");
+            var subcategorySelect = document.getElementById("subcategory");
+
+            subcategorySelect.innerHTML = "";
+
+            if (categorySelect.value === "Health") {
+                var options = ["Lubricants", "Intimate Hygiene"];
+            } else if (categorySelect.value === "Beauty") {
+                var options = ["Shampoo", "Soap"];
+            } else {
+                var options = ["Select Subcategory"];
+            }
+
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement("option");
+                option.text = options[i];
+                option.value = options[i];
+                if (option.value === "{{ user.subcategory }}") {
+                    option.selected = true;
+                }
+                subcategorySelect.add(option);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            updateCategories();
+            updateSubcategories();
+        });
+    </script>
+</body>
+</html> -->
